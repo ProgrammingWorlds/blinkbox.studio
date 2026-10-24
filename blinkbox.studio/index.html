@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en" class="is-loading">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlinkBox Studio — Video Production Company in Amman, Jordan</title>
+<meta name="description" content="BlinkBox Studio — photography, videography & studio rental in Amman, Jordan. Weddings, events, corporate, products. We catch the moments that blink by.">
+<meta name="theme-color" content="#070D1F">
+
+<!-- Open Graph — makes links look great when shared on WhatsApp / social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blinkboxstudio.net/">
+<meta property="og:title" content="BlinkBox Studio — Video Production, Amman">
+<meta property="og:description" content="Photography, videography & studio rental in Amman, Jordan. Weddings, events, corporate — we catch the moments that blink by.">
+<meta property="og:image" content="https://picsum.photos/seed/blinkbox-og/1200/630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32 3 57 17.5 57 46.5 32 61 7 46.5 7 17.5' fill='none' stroke='%23F2B33D' stroke-width='5'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Kufi+Arabic:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============ TOKENS & RESET ============ */
+:root{
+  --ink:#070D1F; --ink2:#0C1631; --navy:#101C3D;
+  --royal:#2E52B2; --royal2:#5E7FE8;
+  --gold:#F2B33D; --gold-deep:#B07E1C;
+  --cream:#F4EFE3;
+  --dim:rgba(244,239,227,.62);
+  --line:rgba(244,239,227,.14);
+  --lineD:rgba(10,18,40,.16);
+  --fd:'Anton',sans-serif;
+  --fb:'Archivo',sans-serif;
+  --fm:'IBM Plex Mono',monospace;
+  --far:'Noto Kufi Arabic',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+html.is-loading{overflow:hidden}
+body{background:var(--ink);color:var(--cream);font-family:var(--fb);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:var(--gold);color:var(--ink)}
+html.has-cursor body, html.has-cursor a, html.has-cursor button{cursor:none}
+.mono{font-family:var(--fm);letter-spacing:.08em}
+.wrap{width:min(1300px,92vw);margin-inline:auto}
+section{scroll-margin-top:70px}
+
+/* ============ FILM GRAIN ============ */
+.grain{position:fixed;inset:-60%;width:220%;height:220%;z-index:9500;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='240' height='240' filter='url(%23n)' opacity='0.6'/></svg>");
+  animation:grain 1s steps(1) infinite}
+@keyframes grain{
+  0%{transform:translate(0,0)}10%{transform:translate(-3%,2%)}20%{transform:translate(2%,-3%)}
+  30%{transform:translate(-2%,-2%)}40%{transform:translate(3%,2%)}50%{transform:translate(-3%,0)}
+  60%{transform:translate(2%,3%)}70%{transform:translate(0,-3%)}80%{transform:translate(-2%,3%)}
+  90%{transform:translate(3%,-2%)}100%{transform:translate(0,0)}}
+
+/* ============ CUSTOM CURSOR ============ */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;z-index:12000;pointer-events:none}
+.cursor-dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.cursor-ring{width:38px;height:38px;border-radius:50%;border:1px solid rgba(244,239,227,.5);
+  display:grid;place-items:center;transition:width .3s,height .3s,background .3s,border-color .3s}
+.cursor-ring.is-link{width:58px;height:58px;border-color:var(--gold);background:rgba(242,179,61,.1)}
+.cursor-ring.is-label{width:78px;height:78px;background:var(--gold);border-color:var(--gold)}
+.cursor-label{font-family:var(--fm);font-size:9px;letter-spacing:.18em;color:var(--ink);opacity:0;transition:opacity .25s;white-space:nowrap}
+.cursor-ring.is-label .cursor-label{opacity:1}
+.no-cursor-els .cursor-dot,.no-cursor-els .cursor-ring{display:none}
+
+/* ============ PRELOADER ============ */
+.preloader{position:fixed;inset:0;z-index:11000}
+.lid{position:absolute;left:0;width:100%;height:50.5%;background:var(--ink);z-index:1}
+.lid-t{top:0;border-bottom:1px solid rgba(242,179,61,.35)}
+.lid-b{bottom:0;border-top:1px solid rgba(242,179,61,.35)}
+.pre-inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.pre-inner svg{width:54px;color:var(--cream);animation:prepulse 1.6s ease-in-out infinite}
+@keyframes prepulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.92);opacity:.55}}
+.pre-name{font-size:11px;letter-spacing:.4em;color:var(--dim)}
+.pre-count{font-family:var(--fd);font-size:clamp(64px,9vw,110px);color:var(--gold);line-height:1}
+.pre-bar{width:min(280px,60vw);height:2px;background:rgba(244,239,227,.15)}
+.pre-bar i{display:block;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
+
+/* ============ HEADER ============ */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 3.4vw;transition:transform .45s cubic-bezier(.65,0,.35,1),background .4s,border-color .4s;border-bottom:1px solid transparent}
+.site-header.scrolled{background:rgba(7,13,31,.72);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.site-header.hide{transform:translateY(-110%)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand svg{width:34px;height:34px;color:var(--cream);flex:none}
+.brand-name{font-family:var(--fd);font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1}
+.brand-name small{display:block;font-family:var(--fm);font-size:8.5px;letter-spacing:.32em;color:var(--gold);margin-top:3px}
+.nav{display:flex;gap:26px}
+.nav a{font-family:var(--fm);font-size:11px;letter-spacing:.18em;color:var(--dim);position:relative;padding:4px 0;transition:color .3s}
+.nav a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav a:hover{color:var(--cream)}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.tc{display:flex;align-items:center;gap:9px;font-family:var(--fm);font-size:11px;color:var(--dim)}
+.rec-dot{width:8px;height:8px;border-radius:50%;background:#FF5A5A;animation:rec 1.1s steps(2) infinite}
+@keyframes rec{50%{opacity:.15}}
+.icon-btn{width:42px;height:42px;border:1px solid rgba(244,239,227,.25);border-radius:50%;display:grid;place-items:center;transition:background .3s,color .3s,border-color .3s}
+.icon-btn svg{width:17px;height:17px}
+.icon-btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.burger{display:none;width:42px;height:42px;border:1px solid rgba(244,239,227,.25);border-radius:50%;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.burger span{display:block;width:16px;height:1.6px;background:var(--cream);transition:transform .3s}
+
+/* ============ BUTTONS ============ */
+.btn{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:10px;padding:15px 27px;
+  border:1px solid rgba(244,239,227,.28);border-radius:999px;font-family:var(--fm);font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cream);background:transparent;overflow:hidden;transition:color .3s,border-color .3s;white-space:nowrap}
+.btn::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--gold);border-radius:inherit;transform:translateY(102%);transition:transform .38s cubic-bezier(.65,0,.35,1)}
+.btn:hover{color:var(--ink);border-color:var(--gold)}
+.btn:hover::before{transform:translateY(0)}
+.btn svg{width:15px;height:15px;flex:none}
+.btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.btn-gold::before{background:var(--cream)}
+.btn-ghost{border-color:rgba(244,239,227,.18);color:var(--dim)}
+
+/* ============ HERO ============ */
+#hero{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:flex-end}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
+.hero-glow{position:absolute;right:2%;top:46%;width:46vw;height:46vw;transform:translateY(-50%);z-index:0;pointer-events:none;
+  background:radial-gradient(circle,rgba(242,179,61,.13),transparent 62%)}
+.hud{position:absolute;inset:24px;z-index:4;pointer-events:none;font-family:var(--fm);font-size:10px;letter-spacing:.16em;color:rgba(244,239,227,.6)}
+.hud .corner{position:absolute;width:24px;height:24px;border:1.5px solid rgba(244,239,227,.35)}
+.corner.tl{top:0;left:0;border-right:0;border-bottom:0}
+.corner.tr{top:0;right:0;border-left:0;border-bottom:0}
+.corner.bl{bottom:0;left:0;border-right:0;border-top:0}
+.corner.br{bottom:0;right:0;border-left:0;border-top:0}
+.hud-tl{position:absolute;top:8px;left:40px;display:flex;align-items:center;gap:8px}
+.hud-tr{position:absolute;top:8px;right:40px;text-align:right;line-height:1.7}
+.hud-bl{position:absolute;bottom:8px;left:40px;line-height:1.7}
+.hud-br{position:absolute;bottom:8px;right:40px;text-align:right;line-height:1.7}
+.hud .rec-dot{width:7px;height:7px}
+.hero-content{position:relative;z-index:5;width:100%;padding:0 3.4vw 11vh;pointer-events:none}
+.hero-content a,.hero-content button{pointer-events:auto}
+.hero-kicker{font-family:var(--fm);font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:3.2vh;text-transform:uppercase}
+.hero-title{font-family:var(--fd);font-size:clamp(74px,16.5vw,236px);line-height:.85;text-transform:uppercase;letter-spacing:.01em}
+.hero-title .clip{display:block;overflow:hidden;padding-bottom:.06em}
+.hero-title .l2{display:flex;align-items:flex-start;gap:.22em;overflow:visible}
+.word{display:block}
+.word.outline{color:transparent;-webkit-text-stroke:2px var(--cream)}
+.reg{font-style:normal;font-size:.22em;vertical-align:super;color:var(--gold);-webkit-text-stroke:0}
+.sub-brand{margin-top:.14em}
+.sub-brand b{display:block;font-family:var(--fd);font-weight:400;font-size:.3em;letter-spacing:.18em;color:var(--gold)}
+.sub-brand .mono{display:block;font-size:11px;letter-spacing:.34em;color:var(--dim);margin-top:8px}
+.hero-sub{max-width:520px;margin-top:3.4vh;color:var(--dim);font-size:15px;line-height:1.7}
+.hero-sub strong{color:var(--cream);font-weight:600}
+.hero-cta{display:flex;gap:14px;margin-top:4vh;flex-wrap:wrap}
+.hero-hint{position:absolute;right:4vw;top:44%;z-index:5;font-family:var(--fm);font-size:10px;letter-spacing:.26em;color:var(--gold);writing-mode:vertical-rl;text-orientation:mixed}
+.hero-side{position:absolute;right:3.4vw;bottom:11vh;z-index:5;display:flex;flex-direction:column;align-items:center;gap:14px;
+  font-family:var(--fm);font-size:9.5px;letter-spacing:.3em;color:var(--dim);writing-mode:vertical-rl}
+.side-line{width:1px;height:64px;background:rgba(244,239,227,.2);position:relative;overflow:hidden}
+.side-line::after{content:'';position:absolute;left:0;top:-30%;width:100%;height:30%;background:var(--gold);animation:sidedrop 1.8s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes sidedrop{to{top:110%}}
+
+/* ============ MARQUEES ============ */
+.marquees{position:relative;z-index:6;padding:7vh 0 2vh;background:var(--ink);overflow:hidden}
+.marquee{transform:rotate(-1.6deg);margin:0 -2vw;overflow:hidden}
+.marquee.mq-b{transform:rotate(1.1deg);margin-top:-.6em;position:relative;z-index:-1}
+.marquee-track{display:flex;width:max-content;will-change:transform}
+.marquee-group{display:flex;align-items:center;gap:2.2vw;padding-right:2.2vw}
+.mq-a{background:var(--gold)}
+.mq-a .mq-item{font-family:var(--fd);font-size:clamp(26px,4.4vw,60px);color:var(--ink);text-transform:uppercase;padding:.16em 0;white-space:nowrap}
+.mq-a .mq-dot{width:.42em;height:.42em;background:var(--ink);transform:rotate(45deg);flex:none}
+.mq-b .mq-item{font-family:var(--fd);font-size:clamp(26px,4.4vw,60px);color:transparent;-webkit-text-stroke:1px rgba(244,239,227,.3);text-transform:uppercase;padding:.16em 0;white-space:nowrap}
+.mq-b .mq-dot{width:.42em;height:.42em;background:rgba(244,239,227,.25);transform:rotate(45deg);flex:none}
+.mq-item.ar{font-family:var(--far);font-size:.72em;-webkit-text-stroke:0}
+.mq-a .ar{color:var(--ink)}
+.mq-b .ar{color:rgba(244,239,227,.35)}
+
+/* ============ SECTION HEADS ============ */
+.sec{padding:15vh 0}
+.sec-tag{font-family:var(--fm);font-size:11px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase}
+.sec-title{font-family:var(--fd);font-size:clamp(44px,7.4vw,108px);line-height:.95;text-transform:uppercase;margin-top:16px;letter-spacing:.01em}
+.sec-title em{font-style:normal;color:var(--gold)}
+
+/* ============ ABOUT / STUDIO (cream) ============ */
+#studio{background:var(--cream);color:var(--ink);position:relative;overflow:hidden}
+#studio .sec-tag{color:var(--gold-deep)}
+.about-ar{position:absolute;top:2vh;right:-2vw;font-family:var(--far);font-size:clamp(140px,20vw,320px);line-height:1;color:rgba(46,82,178,.06);pointer-events:none;white-space:nowrap}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:6vw;align-items:start;margin-top:7vh;position:relative;z-index:2}
+.about-statement{font-size:clamp(24px,2.6vw,40px);line-height:1.38;font-weight:600;letter-spacing:-.01em}
+.about-statement .w{display:inline-block}
+.about-statement .hl{color:var(--royal)}
+.about-note{margin-top:4vh;display:flex;align-items:flex-start;gap:12px;font-size:14px;line-height:1.7;color:rgba(10,18,40,.7);max-width:480px}
+.about-note svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--royal)}
+.collage{position:relative;height:660px}
+.collage figure{position:absolute;background:#fff;padding:10px 10px 14px;box-shadow:0 24px 50px rgba(10,18,40,.18)}
+.collage img{width:100%;filter:grayscale(1) contrast(1.06)}
+.collage figcaption{font-family:var(--fm);font-size:9.5px;letter-spacing:.14em;color:rgba(10,18,40,.6);margin-top:9px;text-transform:uppercase}
+.collage figure::before{content:'';position:absolute;top:-11px;left:50%;width:86px;height:24px;background:rgba(242,179,61,.85);transform:translateX(-50%) rotate(-3deg)}
+.collage figure:nth-child(1){top:0;left:0;width:52%;transform:rotate(-4deg)}
+.collage figure:nth-child(2){top:11%;right:0;width:46%;transform:rotate(3deg)}
+.collage figure:nth-child(3){bottom:9%;left:6%;width:46%;transform:rotate(2deg)}
+.collage figure:nth-child(4){bottom:0;right:3%;width:42%;transform:rotate(-2deg)}
+.stats{margin-top:11vh;border-top:1px solid var(--lineD);display:grid;grid-template-columns:repeat(12,1fr)}
+.stat{padding:36px 26px 10px 26px}
+.stat + .stat{border-left:1px solid var(--lineD)}
+.stat b{font-family:var(--fd);font-weight:400;font-size:clamp(40px,4.4vw,74px);display:block;line-height:1;color:var(--ink)}
+.stat.big b{font-size:clamp(48px,5.6vw,94px);color:var(--royal)}
+.stat .stat-label{display:block;font-family:var(--fm);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(10,18,40,.55);margin-top:12px}
+.stat:nth-child(1){grid-column:1/4}
+.stat:nth-child(2){grid-column:4/8}
+.stat:nth-child(3){grid-column:8/10}
+.stat:nth-child(4){grid-column:10/13}
+
+/* ============ SERVICES (dark) ============ */
+#services{background:var(--ink)}
+.svc-list{margin-top:7vh;border-top:1px solid var(--line)}
+.service-row{position:relative;border-bottom:1px solid var(--line)}
+.service-row::after{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .4s cubic-bezier(.76,0,.24,1)}
+.service-row:hover::after{transform:scaleY(1)}
+.svc-link{position:relative;z-index:2;display:grid;grid-template-columns:88px 1fr 300px 64px;grid-template-areas:"idx name desc arrow";align-items:center;gap:2vw;padding:32px 12px;color:var(--cream);transition:color .35s}
+.service-row:hover .svc-link{color:var(--ink)}
+.svc-idx{grid-area:idx;font-family:var(--fm);font-size:12px;color:var(--gold);transition:color .35s}
+.svc-name{grid-area:name;font-family:var(--fd);font-weight:400;font-size:clamp(30px,4.3vw,62px);text-transform:uppercase;line-height:1;transition:transform .45s cubic-bezier(.65,0,.35,1)}
+.service-row:hover .svc-name{transform:translateX(16px)}
+.svc-desc{grid-area:desc;font-size:13.5px;line-height:1.6;color:var(--dim);transition:color .35s}
+.service-row:hover .svc-desc{color:rgba(10,18,40,.8)}
+.svc-arrow{grid-area:arrow;justify-self:end}
+.svc-arrow svg{width:26px;height:26px;transition:transform .45s cubic-bezier(.65,0,.35,1)}
+.service-row:hover .svc-arrow svg{transform:rotate(45deg)}
+.svc-preview{position:fixed;top:0;left:0;width:290px;height:380px;z-index:80;pointer-events:none;opacity:0;overflow:hidden;border:1px solid rgba(242,179,61,.6);background:var(--navy)}
+.svc-preview img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)}
+
+/* ============ WORK (horizontal) ============ */
+#work{background:var(--ink);height:100vh;display:flex;flex-direction:column;padding:calc(84px + 3vh) 0 5vh;overflow:hidden}
+.work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:0 3.4vw 3.5vh}
+.work-head .sec-title{margin-top:10px}
+.work-meta{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.work-hint{font-family:var(--fm);font-size:10px;letter-spacing:.22em;color:var(--dim)}
+.work-count{font-family:var(--fm);font-size:12px;color:var(--gold);letter-spacing:.2em}
+.work-progress{width:220px;height:2px;background:rgba(244,239,227,.15)}
+.work-progress i{display:block;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.work-stage{flex:1;display:flex;align-items:center}
+.work-track{display:flex;gap:3.2vw;padding:0 6vw 0 3.4vw;width:max-content;will-change:transform}
+.card{width:33vw;min-width:320px;flex:none;display:flex;flex-direction:column;gap:14px}
+.card:nth-child(even){margin-top:4.5vh}
+.card-img{height:47vh;overflow:hidden;position:relative;background:var(--navy);border:1px solid rgba(244,239,227,.08);transition:border-color .4s}
+.card:hover .card-img{border-color:var(--gold)}
+.card:nth-child(even) .card-img{height:53vh}
+.card-img img{width:116%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.07);transition:filter .5s}
+.card:hover .card-img img{filter:grayscale(.2) contrast(1.05)}
+.card-meta{display:flex;flex-direction:column;gap:6px}
+.card-meta .cat{font-family:var(--fm);font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.card-meta h3{font-family:var(--fd);font-weight:400;font-size:clamp(20px,1.9vw,30px);text-transform:uppercase;line-height:1.05}
+.card-meta .where{font-family:var(--fm);font-size:10px;letter-spacing:.14em;color:rgba(244,239,227,.45)}
+.card-end{width:34vw;min-width:320px;flex:none;align-self:stretch;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:22px;
+  border:1px solid rgba(242,179,61,.4);padding:4vw;margin-top:0}
+.card-end h3{font-family:var(--fd);font-weight:400;font-size:clamp(34px,3.4vw,58px);line-height:1;text-transform:uppercase}
+.card-end h3 em{font-style:normal;color:var(--gold)}
+.card-end p{font-size:14px;color:var(--dim);max-width:300px;line-height:1.6}
+
+/* ============ PROCESS (stacked panels) ============ */
+#process{background:var(--ink)}
+#process .sec-head{padding:14vh 0 9vh}
+.panel{position:sticky;top:0;min-height:100vh;display:flex;align-items:center;border-radius:34px 34px 0 0;box-shadow:0 -24px 60px rgba(0,0,0,.35);will-change:transform,filter}
+.p1{background:var(--ink2);color:var(--cream)}
+.p2{background:var(--royal);color:var(--cream)}
+.p3{background:var(--gold);color:var(--ink)}
+.p4{background:var(--cream);color:var(--ink)}
+.panel-in{display:grid;grid-template-columns:auto 1fr;gap:5vw;align-items:center;width:min(1300px,92vw);margin-inline:auto;padding:12vh 0 9vh}
+.p-num{font-family:var(--fd);font-size:clamp(110px,22vw,300px);line-height:.8;color:transparent;-webkit-text-stroke:2px currentColor;opacity:.45}
+.p-kicker{font-family:var(--fm);font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;opacity:.65}
+.p-body h3{font-family:var(--fd);font-weight:400;font-size:clamp(34px,4.4vw,68px);text-transform:uppercase;line-height:1;margin:14px 0 18px}
+.p-body p{max-width:560px;font-size:16px;line-height:1.7;opacity:.85}
+.p-tags{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.p-tags li{font-family:var(--fm);font-size:10px;letter-spacing:.14em;border:1px solid currentColor;border-radius:999px;padding:8px 15px;opacity:.75;text-transform:uppercase}
+
+/* ============ CONTACT ============ */
+#contact{position:relative;background:var(--ink);padding:18vh 0 13vh;overflow:hidden}
+.iris{position:absolute;right:4vw;top:12vh;width:min(340px,30vw);opacity:.9;pointer-events:none}
+.contact-title{font-family:var(--fd);font-size:clamp(56px,11vw,190px);line-height:.92;text-transform:uppercase;margin-top:20px;letter-spacing:.01em}
+.contact-title .line{display:block;overflow:hidden;padding-bottom:.05em}
+.contact-title .gold{color:var(--gold)}
+.contact-title .ch{display:inline-block}
+.contact-sub{max-width:520px;margin-top:3.5vh;font-size:15.5px;line-height:1.7;color:var(--dim)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:5.5vh}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4vw;margin-top:11vh;border-top:1px solid var(--line);padding-top:5.5vh}
+.c-item .c-label{font-family:var(--fm);font-size:10px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:14px}
+.c-item p{font-size:14.5px;line-height:1.8;color:var(--dim)}
+.c-item a{border-bottom:1px solid rgba(242,179,61,.4);transition:color .3s}
+.c-item a:hover{color:var(--gold)}
+.c-item .ar{font-family:var(--far);color:var(--gold);font-size:15px;margin-top:10px;display:block}
+
+/* ============ FOOTER ============ */
+footer{background:#050A18;border-top:1px solid var(--line);padding-top:9vh}
+.foot-grid{display:grid;grid-template-columns:1.4fr .8fr 1fr;gap:4vw;padding-bottom:8vh}
+.foot-brand .brand{margin-bottom:18px}
+.foot-brand p{font-size:13.5px;color:var(--dim);line-height:1.7;max-width:300px}
+.foot-brand .ar{font-family:var(--far);color:var(--gold);margin-top:12px;display:block;font-size:15px}
+.foot-col h5{font-family:var(--fm);font-weight:500;font-size:10px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+.foot-col a{display:flex;align-items:center;gap:10px;font-family:var(--fm);font-size:12px;letter-spacing:.1em;color:var(--dim);padding:6px 0;transition:color .3s,transform .3s}
+.foot-col a:hover{color:var(--cream);transform:translateX(6px)}
+.social-row{display:flex;gap:10px;margin-top:20px}
+.foot-bar{border-top:1px solid var(--line);padding:20px 3.4vw;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--fm);font-size:9.5px;letter-spacing:.18em;color:rgba(244,239,227,.4)}
+
+/* ============ MOBILE MENU ============ */
+.m-menu{position:fixed;inset:0;z-index:300;background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:0 9vw;
+  opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s}
+.m-menu.open{opacity:1;visibility:visible}
+.m-link{display:flex;align-items:baseline;gap:18px;font-family:var(--fd);font-size:clamp(40px,10vw,64px);text-transform:uppercase;line-height:1.25;color:var(--cream)}
+.m-link i{font-family:var(--fm);font-style:normal;font-size:12px;color:var(--gold);letter-spacing:.2em}
+.m-foot{margin-top:7vh;display:flex;gap:14px;flex-wrap:wrap}
+
+/* ============ TOAST ============ */
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,140%);z-index:13000;display:flex;align-items:center;gap:11px;
+  background:var(--cream);color:var(--ink);padding:14px 22px;border-radius:999px;font-family:var(--fm);font-size:12px;letter-spacing:.06em;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);transition:transform .45s cubic-bezier(.34,1.4,.5,1)}
+.toast.show{transform:translate(-50%,0)}
+.toast svg{width:16px;height:16px;color:var(--gold-deep)}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1100px){
+  .nav{display:none}
+  .burger{display:flex}
+}
+@media (max-width:1000px){
+  .about-grid{grid-template-columns:1fr}
+  .collage{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:2vh}
+  .collage figure{position:static;width:auto!important;transform:rotate(0)!important}
+  .about-ar{font-size:40vw;top:auto;bottom:-4vw}
+}
+@media (max-width:860px){
+  #hero .hud-tr,#hero .hud-bl,#hero .hud-br,.hero-hint,.hero-side{display:none}
+  #hero{align-items:flex-end}
+  .hero-content{padding-bottom:14vh}
+  .word.outline{-webkit-text-stroke-width:1.5px}
+  #work{height:auto;padding:12vh 0}
+  .work-head{flex-direction:column;align-items:flex-start}
+  .work-meta{align-items:flex-start}
+  .work-stage{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+  .card{width:78vw;min-width:0;scroll-snap-align:center}
+  .card-img,.card:nth-child(even) .card-img{height:46vh}
+  .card:nth-child(even){margin-top:0}
+  .card-end{width:78vw;min-width:0;align-self:stretch;margin:0 4vw 0 0}
+  .work-track{padding-bottom:2vh}
+  .svc-link{grid-template-columns:52px 1fr 44px;grid-template-areas:"idx name arrow" ". desc desc";gap:8px 4vw;padding:26px 8px}
+  .svc-desc{margin-top:10px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat,.stat + .stat{grid-column:auto;border-left:none;border-top:1px solid var(--lineD);padding:26px 8px 6px}
+  .panel-in{grid-template-columns:1fr;gap:3vh;padding:14vh 0 10vh}
+  .p-num{font-size:34vw}
+  .iris{display:none}
+  .contact-grid{grid-template-columns:1fr;gap:5vh}
+  .foot-grid{grid-template-columns:1fr;gap:6vh}
+  .tc{display:none}
+  .hdr-cta{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.rec-dot,.side-line::after,.pre-inner svg{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" id="cDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cRing" aria-hidden="true"><span class="cursor-label" id="cLabel"></span></div>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader">
+  <div class="lid lid-t"></div><div class="lid lid-b"></div>
+  <div class="pre-inner">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <polygon points="32 3 57 17.5 57 46.5 32 61 7 46.5 7 17.5" fill="none" stroke="currentColor" stroke-width="3.5"/>
+      <path d="M25 16v33M25 30a9.5 9.5 0 1 1 0 19" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <polygon points="43 9 50.5 13.2 50.5 21.4 43 25.6 35.5 21.4 35.5 13.2" fill="#F2B33D"/>
+    </svg>
+    <div class="pre-name mono">BLINKBOX STUDIO</div>
+    <div class="pre-count" id="preCount">000</div>
+    <div class="pre-bar"><i id="preBar"></i></div>
+  </div>
+</div>
+<noscript><style>.preloader{display:none}html.is-loading{overflow:auto}</style></noscript>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#hero" aria-label="BlinkBox Studio — home">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <polygon points="32 3 57 17.5 57 46.5 32 61 7 46.5 7 17.5" fill="none" stroke="currentColor" stroke-width="3.5"/>
+      <path d="M25 16v33M25 30a9.5 9.5 0 1 1 0 19" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <polygon points="43 9 50.5 13.2 50.5 21.4 43 25.6 35.5 21.4 35.5 13.2" fill="#F2B33D"/>
+    </svg>
+    <span class="brand-name">BlinkBox<small>STUDIO — AMMAN</small></span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#studio">STUDIO</a>
+    <a href="#services">SERVICES</a>
+    <a href="#work">WORK</a>
+    <a href="#process">PROCESS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+  <div class="hdr-right">
+    <div class="tc" aria-hidden="true"><span class="rec-dot"></span><span data-tc>00:00:00:00</span></div>
+    <a class="icon-btn" href="https://www.instagram.com/blinkbox.studio/" target="_blank" rel="noopener" aria-label="BlinkBox Studio on Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="btn btn-gold hdr-cta" href="#contact">Let's talk</a>
+    <button class="burger" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <a class="m-link" href="#studio"><i>/01</i>Studio</a>
+  <a class="m-link" href="#services"><i>/02</i>Services</a>
+  <a class="m-link" href="#work"><i>/03</i>Work</a>
+  <a class="m-link" href="#process"><i>/04</i>Process</a>
+  <a class="m-link" href="#contact"><i>/05</i>Contact</a>
+  <div class="m-foot">
+    <a class="btn btn-gold" href="https://www.instagram.com/blinkbox.studio/" target="_blank" rel="noopener">@blinkbox.studio</a>
+    <a class="btn" href="https://wa.me/962797111507" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section id="hero" data-cursor="DRAG">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <div class="hud" aria-hidden="true">
+    <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+    <div class="hud-tl"><span class="rec-dot"></span>REC — BB_001 · 4K · 24FPS</div>
+    <div class="hud-tr"><span data-tc>00:00:00:00</span><br>LOG · ND 0.3 · S-log3</div>
+    <div class="hud-bl">A-CAM — AMMAN, JO<br>31.95°N · 35.91°E</div>
+    <div class="hud-br">ISO 800 · ƒ/1.8<br>WB 5600K</div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-kicker">[ Video Production Studio — Amman, Jordan ]</p>
+    <h1 class="hero-title">
+      <span class="clip"><span class="word">BLINK</span></span>
+      <span class="l2">
+        <span class="clip"><span class="word outline">BOX<i class="reg">®</i></span></span>
+        <span class="sub-brand"><b>STUDIO</b><span class="mono">PHOTO · FILM · RENTAL</span></span>
+      </span>
+    </h1>
+    <p class="hero-sub">Weddings, finals, launches — the moments that <strong>blink by</strong>. We catch them in 4K and press them into frames that last. This is BlinkBox.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#work"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>Watch the reel</a>
+      <a class="btn" href="#contact">Book a studio</a>
+    </div>
+  </div>
+
+  <div class="hero-hint" aria-hidden="true">[ DRAG THE BOX — CLICK TO BLINK ]</div>
+  <div class="hero-side" aria-hidden="true">SCROLL TO FOCUS<span class="side-line"></span></div>
+</section>
+
+<!-- ============ MARQUEES ============ -->
+<div class="marquees" aria-hidden="true">
+  <div class="marquee mq-a"><div class="marquee-track" id="mqA">
+    <div class="marquee-group">
+      <span class="mq-item">Videography</span><i class="mq-dot"></i>
+      <span class="mq-item">Photography</span><i class="mq-dot"></i>
+      <span class="mq-item">Studio Rental</span><i class="mq-dot"></i>
+      <span class="mq-item">Weddings</span><i class="mq-dot"></i>
+      <span class="mq-item">Events</span><i class="mq-dot"></i>
+      <span class="mq-item">Corporate</span><i class="mq-dot"></i>
+      <span class="mq-item">Products</span><i class="mq-dot"></i>
+      <span class="mq-item">Editing</span><i class="mq-dot"></i>
+      <span class="mq-item ar" lang="ar">لحظات تُروى</span><i class="mq-dot"></i>
+    </div>
+  </div></div>
+  <div class="marquee mq-b"><div class="marquee-track" id="mqB">
+    <div class="marquee-group">
+      <span class="mq-item">Amman</span><i class="mq-dot"></i>
+      <span class="mq-item">Est. Jordan</span><i class="mq-dot"></i>
+      <span class="mq-item">Shot on 4K</span><i class="mq-dot"></i>
+      <span class="mq-item">24 Frames / sec</span><i class="mq-dot"></i>
+      <span class="mq-item ar" lang="ar">استوديو للإيجار — خلدا</span><i class="mq-dot"></i>
+      <span class="mq-item">Book your date</span><i class="mq-dot"></i>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ STUDIO / ABOUT ============ -->
+<section id="studio" class="sec">
+  <div class="about-ar" lang="ar" aria-hidden="true">لحظات</div>
+  <div class="wrap">
+    <span class="sec-tag">[ 01 — The Studio ]</span>
+    <h2 class="sec-title">A box full<br>of moments<em>.</em></h2>
+
+    <div class="about-grid">
+      <div>
+        <p class="about-statement" id="statement">
+          <span class="w">We</span> <span class="w">are</span> <span class="w hl">BlinkBox</span> <span class="w">—</span>
+          <span class="w">a</span> <span class="w">video</span> <span class="w">production</span> <span class="w">studio</span>
+          <span class="w">in</span> <span class="w">Amman.</span> <span class="w">We</span> <span class="w">chase</span>
+          <span class="w">the</span> <span class="w">moments</span> <span class="w">that</span> <span class="w hl">blink</span>
+          <span class="w">by</span> <span class="w">—</span> <span class="w">weddings,</span> <span class="w">finals,</span>
+          <span class="w">launches,</span> <span class="w">confetti</span> <span class="w">—</span> <span class="w">and</span>
+          <span class="w">press</span> <span class="w">them</span> <span class="w">into</span> <span class="w hl">frames</span>
+          <span class="w">that</span> <span class="w">last</span> <span class="w hl">forever.</span>
+        </p>
+        <div class="about-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Find us in Khalda — Bldg 36, Amer Bin Malek Street, Amman 11182. Sports, weddings, corporate &amp; products — covered across Jordan and beyond.</span>
+        </div>
+      </div>
+      <div class="collage" aria-hidden="false">
+        <figure><img src="https://picsum.photos/seed/blinkmoments1/620/720?grayscale" alt="Behind the scenes on a sports shoot" loading="lazy"><figcaption>BTS — FIBA Qualifiers</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/blinkmoments2/620/560?grayscale" alt="Inside the BlinkBox rental studio" loading="lazy"><figcaption>The studio — Khalda</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/blinkmoments3/620/540?grayscale" alt="Wedding photography moment" loading="lazy"><figcaption>Nour &amp; Omar</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/blinkmoments4/620/700?grayscale" alt="Product shoot setup" loading="lazy"><figcaption>Product day</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b data-target="500" data-suffix="+">0</b><span class="stat-label">Projects delivered</span></div>
+      <div class="stat big"><b data-target="1000000" data-suffix="+">0</b><span class="stat-label">Frames captured &amp; counting</span></div>
+      <div class="stat"><b data-target="50" data-suffix=" m²">0</b><span class="stat-label">Rental studio — Khalda</span></div>
+      <div class="stat"><b data-target="300" data-prefix="from " data-suffix=" JOD">0</b><span class="stat-label">Wedding film packages</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="sec">
+  <div class="wrap">
+    <span class="sec-tag">[ 02 — What we do ]</span>
+    <h2 class="sec-title">Capabilities<em>.</em></h2>
+  </div>
+  <div class="wrap">
+    <ul class="svc-list" id="svcList">
+      <li class="service-row" data-img="https://picsum.photos/seed/svc-videography/640/840?grayscale" data-cursor="OPEN">
+        <a class="svc-link" href="#contact"><span class="svc-idx">/01</span><h3 class="svc-name">Videography</h3>
+        <p class="svc-desc">Films, event coverage &amp; social content — shot in 4K, delivered fast.</p>
+        <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      </li>
+      <li class="service-row" data-img="https://picsum.photos/seed/svc-photography/640/840?grayscale" data-cursor="OPEN">
+        <a class="svc-link" href="#contact"><span class="svc-idx">/02</span><h3 class="svc-name">Photography</h3>
+        <p class="svc-desc">Weddings, portraits, products &amp; press-ready stills.</p>
+        <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      </li>
+      <li class="service-row" data-img="https://picsum.photos/seed/svc-studio/640/840?grayscale" data-cursor="OPEN">
+        <a class="svc-link" href="#contact"><span class="svc-idx">/03</span><h3 class="svc-name">Studio Rental</h3>
+        <p class="svc-desc">50 m² in Khalda — pro lighting, 3 backdrops, changing room. By the hour.</p>
+        <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      </li>
+      <li class="service-row" data-img="https://picsum.photos/seed/svc-weddings/640/840?grayscale" data-cursor="OPEN">
+        <a class="svc-link" href="#contact"><span class="svc-idx">/04</span><h3 class="svc-name">Weddings</h3>
+        <p class="svc-desc">Photo + film crews for your whole day. Packages from 300 JOD.</p>
+        <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      </li>
+      <li class="service-row" data-img="https://picsum.photos/seed/svc-corporate/640/840?grayscale" data-cursor="OPEN">
+        <a class="svc-link" href="#contact"><span class="svc-idx">/05</span><h3 class="svc-name">Corporate &amp; Events</h3>
+        <p class="svc-desc">Launches, conferences, finals — FIBA-tested crews.</p>
+        <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      </li>
+      <li class="service-row" data-img="https://picsum.photos/seed/svc-post/640/840?grayscale" data-cursor="OPEN">
+        <a class="svc-link" href="#contact"><span class="svc-idx">/06</span><h3 class="svc-name">Post-Production</h3>
+        <p class="svc-desc">Editing, color, motion graphics &amp; sound that make footage sing.</p>
+        <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="svc-preview" id="svcPreview" aria-hidden="true"><img id="svcImg" alt=""></div>
+</section>
+
+<!-- ============ WORK (horizontal reel) ============ -->
+<section id="work">
+  <div class="work-head">
+    <div>
+      <span class="sec-tag">[ 03 — Selected frames ]</span>
+      <h2 class="sec-title">Recent work<em>.</em></h2>
+    </div>
+    <div class="work-meta">
+      <span class="work-hint">THE REEL MOVES SIDEWAYS — KEEP SCROLLING</span>
+      <div class="work-progress"><i id="wpBar"></i></div>
+      <span class="work-count"><span id="wpCount">01</span> / 08</span>
+    </div>
+  </div>
+  <div class="work-stage">
+    <div class="work-track" id="workTrack">
+      <article class="card" data-cursor="VIEW">
+        <div class="card-img"><img src="https://picsum.photos/seed/wk-fiba/900/1150?grayscale" alt="Basketball action during FIBA Asia Cup qualifiers"></div>
+        <div class="card-meta"><span class="cat">01 — Sports</span><h3>FIBA Asia Cup Qualifiers</h3><span class="where">AMMAN · 2025</span></div>
+      </article>
+      <article class="card" data-cursor="VIEW">
+        <div class="card-img"><img src="https://picsum.photos/seed/wk-wedding/900/1150?grayscale" alt="Wedding film frame"></div>
+        <div class="card-meta"><span class="cat">02 — Wedding</span><h3>Nour &amp; Omar — Sadeen</h3><span class="where">AMMAN · 2025</span></div>
+      </article>
+      <article class="card" data-cursor="VIEW">
+        <div class="card-img"><img src="https://picsum.photos/seed/wk-product/1150/850?grayscale" alt="Product film still"></div>
+        <div class="card-meta"><span class="cat">03 — Product</span><h3>Zinc Atelier — Launch Film</h3><span class="where">STUDIO · 2024</span></div>
+      </article>
+      <article class="card" data-cursor="VIEW">
+        <div class="card-img"><img src="https://picsum.photos/seed/wk-portrait/900/1150?grayscale" alt="Studio portrait session"></div>
+        <div class="card-meta"><span class="cat">04 — Portrait</span><h3>Studio Sessions</h3><span class="where">KHALDA · ONGOING</span></div>
+      </article>
+      <article class="card" data-cursor="VIEW">
+        <div class="card-img"><img src="https://picsum.photos/seed/wk-ramadan/900/1150?grayscale" alt="Ramadan campaign visual"></div>
+        <div class="card-meta"><span class="cat">05 — Social</span><h3>Ramadan Campaign Series</h3><span class="where">2024</span></div>
+      </article>
+      <article class="card" data-cursor="VIEW">
+        <div class="card-img"><img src="https://picsum.photos/seed/wk-conf/1150/850?grayscale" alt="Corporate conference coverage"></div>
+        <div class="card-meta"><span class="cat">06 — Corporate</span><h3>TechConf Amman</h3><span class="where">2024</span></div>
+      </article>
+      <article class="card" data-cursor="VIEW">
+        <div class="card-img"><img src="https://picsum.photos/seed/wk-wadi/900/1150?grayscale" alt="Short documentary frame from Wadi Rum at night"></div>
+        <div class="card-meta"><span class="cat">07 — Film</span><h3>Wadi Nights — Short Doc</h3><span class="where">2023</span></div>
+      </article>
+      <article class="card-end">
+        <h3>Your story<br><em>here.</em></h3>
+        <p>Dates book fast — weddings, finals, launches. Tell us about your moment.</p>
+        <a class="btn btn-gold" href="#contact">Save a date</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process">
+  <div class="wrap sec-head">
+    <span class="sec-tag">[ 04 — The process ]</span>
+    <h2 class="sec-title">From blink<br>to final cut<em>.</em></h2>
+  </div>
+  <div class="stack">
+    <div class="panel p1"><div class="panel-in">
+      <span class="p-num" aria-hidden="true">01</span>
+      <div class="p-body"><span class="p-kicker">Step 01 — Pre-production</span><h3>Concept</h3>
+      <p>Brief, moodboard, script &amp; shot-list. We find the story hiding inside your moment — before a single frame rolls.</p>
+      <ul class="p-tags"><li>Brief</li><li>Script</li><li>Moodboard</li><li>Shot-list</li></ul></div>
+    </div></div>
+    <div class="panel p2"><div class="panel-in">
+      <span class="p-num" aria-hidden="true">02</span>
+      <div class="p-body"><span class="p-kicker">Step 02 — On set</span><h3>Capture</h3>
+      <p>Cinema cameras, certified crews, on-field direction — from wedding halls to FIBA courts, we've shot where it's loud and it matters.</p>
+      <ul class="p-tags"><li>4K / Log</li><li>Crew</li><li>Direction</li><li>Audio</li></ul></div>
+    </div></div>
+    <div class="panel p3"><div class="panel-in">
+      <span class="p-num" aria-hidden="true">03</span>
+      <div class="p-body"><span class="p-kicker">Step 03 — Post</span><h3>Craft</h3>
+      <p>Edit, color grade, sound design &amp; motion graphics. This is where raw footage finds its rhythm.</p>
+      <ul class="p-tags"><li>Edit</li><li>Color</li><li>Sound</li><li>Motion GFX</li></ul></div>
+    </div></div>
+    <div class="panel p4"><div class="panel-in">
+      <span class="p-num" aria-hidden="true">04</span>
+      <div class="p-body"><span class="p-kicker">Step 04 — Handover</span><h3>Deliver</h3>
+      <p>Master files, cutdowns &amp; social formats — delivered ready to publish, on every screen your audience lives on.</p>
+      <ul class="p-tags"><li>Masters</li><li>Cutdowns</li><li>9:16 / 1:1</li><li>Archive</li></ul></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <svg class="iris" viewBox="0 0 200 200" aria-hidden="true">
+    <g stroke="#2E52B2" fill="none" stroke-width="1.4" opacity=".8">
+      <polygon points="100,10 177.9,55 177.9,145 100,190 22.1,145 22.1,55"/>
+      <polygon points="160.6,65 160.6,135 100,170 39.4,135 39.4,65 100,30"/>
+      <polygon points="139,78.5 139,121.5 100,143.5 61,121.5 61,78.5 100,56.5"/>
+    </g>
+    <g id="irisBlades" stroke="#F2B33D" stroke-width="1.5" fill="none">
+      <path d="M100 30 83.3 119.9M39.4 65 74.4 95.5M39.4 135 91.1 75.6M100 170 116.7 80.1M160.6 135 125.6 104.5M160.6 65 108.9 124.4"/>
+    </g>
+    <circle cx="100" cy="100" r="6" fill="#F2B33D"/>
+  </svg>
+
+  <div class="wrap">
+    <span class="sec-tag">[ 05 — Say hello ]</span>
+    <h2 class="contact-title" id="contactTitle">
+      <span class="line">Let's make it</span>
+      <span class="line gold">blink.</span>
+    </h2>
+    <p class="contact-sub">Tell us about your moment — a wedding, a launch, a final. We'll bring the crew, the light and the box.</p>
+
+    <div class="contact-actions">
+      <a class="btn btn-gold" href="https://wa.me/962797111507?text=Hello%20BlinkBox%20Studio!%20I%27d%20like%20to%20book%20a%20shoot." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        WhatsApp us
+      </a>
+      <a class="btn" href="tel:+962797111507">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call 079 711 1507
+      </a>
+      <a class="btn" href="mailto:info@blinkboxstudio.net">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        info@blinkboxstudio.net
+      </a>
+      <a class="btn" href="https://www.instagram.com/blinkbox.studio/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+        @blinkbox.studio
+      </a>
+      <button class="btn btn-ghost" id="shareBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+        Share this site
+      </button>
+    </div>
+
+    <div class="contact-grid">
+      <div class="c-item">
+        <span class="c-label">The Studio</span>
+        <p>Bldg 36, Amer Bin Malek Street<br>Khalda, Amman 11182 — Jordan<br>Book by phone or WhatsApp — we reply fast.</p>
+      </div>
+      <div class="c-item">
+        <span class="c-label">Elsewhere</span>
+        <p><a href="https://www.instagram.com/blinkbox.studio/" target="_blank" rel="noopener">instagram.com/blinkbox.studio</a><br>
+        <a href="https://blinkboxstudio.net" target="_blank" rel="noopener">blinkboxstudio.net</a></p>
+        <span class="ar" lang="ar">لحظات تُروى — stories told.</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="#hero">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <polygon points="32 3 57 17.5 57 46.5 32 61 7 46.5 7 17.5" fill="none" stroke="currentColor" stroke-width="3.5"/>
+          <path d="M25 16v33M25 30a9.5 9.5 0 1 1 0 19" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          <polygon points="43 9 50.5 13.2 50.5 21.4 43 25.6 35.5 21.4 35.5 13.2" fill="#F2B33D"/>
+        </svg>
+        <span class="brand-name">BlinkBox<small>STUDIO — AMMAN</small></span>
+      </a>
+      <p>Video production company — photography, videography &amp; studio rental in Amman, Jordan.</p>
+      <span class="ar" lang="ar">لحظات تُروى</span>
+    </div>
+    <div class="foot-col">
+      <h5>Navigate</h5>
+      <a href="#studio">Studio</a><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h5>Reach us</h5>
+      <a href="tel:+962797111507">+962 79 711 1507</a>
+      <a href="mailto:info@blinkboxstudio.net">info@blinkboxstudio.net</a>
+      <a href="https://blinkboxstudio.net" target="_blank" rel="noopener">blinkboxstudio.net</a>
+      <div class="social-row">
+        <a class="icon-btn" href="https://www.instagram.com/blinkbox.studio/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="icon-btn" href="https://wa.me/962797111507" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2025 BLINKBOX STUDIO — ALL FRAMES RESERVED</span>
+    <span>AMMAN, JORDAN · 31.95°N 35.91°E</span>
+    <span>BUILT WITH LIGHT AT 24 FPS</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></svg>
+  <span id="toastMsg"></span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+(function(){
+"use strict";
+const q=(s,c=document)=>c.querySelector(s);
+const qa=(s,c=document)=>[...c.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE=matchMedia('(pointer:fine)').matches;
+if(window.gsap&&window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+/* ---------- smooth scroll ---------- */
+let lenis=null;
+if(window.Lenis&&!RM){
+  lenis=new Lenis({duration:1.15,smoothWheel:true});
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000));
+  gsap.ticker.lagSmoothing(0);
+  lenis.stop();
+}
+
+/* ---------- toast ---------- */
+let toastT;
+function toast(msg){
+  q('#toastMsg').textContent=msg;
+  q('#toast').classList.add('show');
+  clearTimeout(toastT);
+  toastT=setTimeout(()=>q('#toast').classList.remove('show'),2600);
+}
+
+/* ---------- running timecode ---------- */
+{
+  const els=qa('[data-tc]'); let f=0;
+  const p=n=>String(n).padStart(2,'0');
+  setInterval(()=>{
+    f++;
+    els.forEach(e=>e.textContent=`${p(Math.floor(f/86400)%24)}:${p(Math.floor(f/1440)%60)}:${p(Math.floor(f/24)%60)}:${p(f%24)}`);
+  },1000/24);
+}
+
+/* ---------- THREE.js — the BlinkBox ---------- */
+let glIntro=null;
+(function initGL(){
+  if(!window.THREE) return;
+  const hero=q('#hero'),canvas=q('#gl');
+  let W=hero.clientWidth,H=hero.clientHeight,camBase=10.5,worldBaseY=0;
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.setSize(W,H,false);
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(38,W/H,.1,100);
+  camera.position.set(0,0,camBase);
+
+  const world=new THREE.Group(); scene.add(world);
+  scene.add(new THREE.AmbientLight(0xffffff,.55));
+  const key=new THREE.DirectionalLight(0xfff2dc,1); key.position.set(4,6,6); scene.add(key);
+  const goldL=new THREE.PointLight(0xf2b33d,2.4,30); goldL.position.set(-6,-2,4); scene.add(goldL);
+  const blueL=new THREE.PointLight(0x3d63d6,2.6,30); blueL.position.set(6,3,-4); scene.add(blueL);
+
+  const R=2.05,HH=2.7;
+  const cageMat=new THREE.LineBasicMaterial({color:0x9db4ff,transparent:true,opacity:0});
+  world.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.CylinderGeometry(R,R,HH,6,1,true)),cageMat));
+  const cage2Mat=new THREE.LineBasicMaterial({color:0xf2b33d,transparent:true,opacity:0});
+  const cage2=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.CylinderGeometry(R*.7,R*.7,HH*.7,6,1,true)),cage2Mat);
+  cage2.rotation.y=Math.PI/6; world.add(cage2);
+  const faceMat=new THREE.MeshPhysicalMaterial({color:0x2e52b2,transparent:true,opacity:.1,roughness:.3,metalness:.2,side:THREE.DoubleSide,depthWrite:false,emissive:0xf2b33d,emissiveIntensity:0});
+  world.add(new THREE.Mesh(new THREE.CylinderGeometry(R,R,HH,6,1,true),faceMat));
+  const ringG=new THREE.Mesh(new THREE.TorusGeometry(3.2,.02,10,140),new THREE.MeshBasicMaterial({color:0xf2b33d,transparent:true,opacity:0}));
+  ringG.rotation.x=Math.PI/2.15; world.add(ringG);
+  const ringB=new THREE.Mesh(new THREE.TorusGeometry(3.75,.012,10,140),new THREE.MeshBasicMaterial({color:0x5e7fe8,transparent:true,opacity:0}));
+  ringB.rotation.x=Math.PI/1.85; ringB.rotation.y=.5; world.add(ringB);
+  const pulse=new THREE.Mesh(new THREE.TorusGeometry(2.4,.035,10,120),new THREE.MeshBasicMaterial({color:0xf2b33d,transparent:true,opacity:0}));
+  pulse.rotation.x=Math.PI/2; world.add(pulse);
+
+  /* orbiting photo frames */
+  const seeds=['wk-fiba','wk-wedding','wk-product','wk-portrait','wk-ramadan','wk-conf','wk-wadi','svc-studio','blinkmoments1','blinkmoments2'];
+  const loader=new THREE.TextureLoader(); loader.setCrossOrigin('anonymous');
+  const frames=[];
+  seeds.forEach((s,i)=>{
+    const mat=new THREE.MeshBasicMaterial({transparent:true,opacity:0,side:THREE.DoubleSide,color:0x1a2750});
+    loader.load(`https://picsum.photos/seed/${s}/480/320?grayscale`,t=>{
+      if('colorSpace' in t) t.colorSpace=THREE.SRGBColorSpace;
+      mat.map=t; mat.color.set(0xffffff); mat.needsUpdate=true;
+    },undefined,()=>{});
+    const m=new THREE.Mesh(new THREE.PlaneGeometry(1.5,1),mat);
+    const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(1.57,1.07)),
+      new THREE.LineBasicMaterial({color:0xf2b33d,transparent:true,opacity:0}));
+    m.add(edge);
+    const ring=i%2, a=(i/seeds.length)*Math.PI*2+(ring?Math.PI/10:0);
+    const rad=ring?3.3:2.9, y=ring?.55:-.55;
+    m.position.set(Math.cos(a)*rad,y,Math.sin(a)*rad);
+    m.lookAt(0,y*.35,0);
+    frames.push({m,edge,baseY:y,phase:Math.random()*Math.PI*2});
+    world.add(m);
+  });
+
+  /* dust particles (soft round sprites) */
+  const N=220,pos=new Float32Array(N*3),col=new Float32Array(N*3);
+  const cGold=new THREE.Color(0xf2b33d),cBlue=new THREE.Color(0x5e7fe8),cCream=new THREE.Color(0xf4efe3);
+  for(let i=0;i<N;i++){
+    const r=3.6+Math.random()*5.5,th=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1);
+    pos[i*3]=r*Math.sin(ph)*Math.cos(th); pos[i*3+1]=r*Math.cos(ph)*.7; pos[i*3+2]=r*Math.sin(ph)*Math.sin(th);
+    const c=[cGold,cBlue,cCream][i%3]; col[i*3]=c.r; col[i*3+1]=c.g; col[i*3+2]=c.b;
+  }
+  const pGeo=new THREE.BufferGeometry();
+  pGeo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  pGeo.setAttribute('color',new THREE.BufferAttribute(col,3));
+  const cv=document.createElement('canvas'); cv.width=cv.height=64;
+  const cx=cv.getContext('2d'),g=cx.createRadialGradient(32,32,0,32,32,32);
+  g.addColorStop(0,'rgba(255,255,255,1)'); g.addColorStop(.4,'rgba(255,255,255,.6)'); g.addColorStop(1,'rgba(255,255,255,0)');
+  cx.fillStyle=g; cx.fillRect(0,0,64,64);
+  const pMat=new THREE.PointsMaterial({size:.07,map:new THREE.CanvasTexture(cv),transparent:true,opacity:0,depthWrite:false,vertexColors:true,blending:THREE.AdditiveBlending});
+  const pts=new THREE.Points(pGeo,pMat); scene.add(pts);
+
+  const state={rotY:0,rotX:0,vY:0,vX:0,tiltX:0,tiltY:0,introRot:-1.7,scroll:0,auto:RM?0:.0022};
+  let heroVisible=true,blinking=false,nextBlink=7;
+
+  function layout(){
+    W=hero.clientWidth; H=hero.clientHeight;
+    renderer.setSize(W,H,false);
+    camera.aspect=W/H; camera.updateProjectionMatrix();
+    if(W>1000){ world.position.set(2.3,0,0); worldBaseY=0; world.scale.setScalar(1); camBase=10.5; }
+    else{ world.position.set(0,1.5,-1); worldBaseY=1.5; world.scale.setScalar(.78); camBase=11.5; }
+  }
+  layout(); addEventListener('resize',layout);
+
+  function blink(){
+    if(blinking) return; blinking=true;
+    const base=world.scale.x;
+    gsap.timeline({onComplete:()=>blinking=false})
+      .to(faceMat,{emissiveIntensity:.5,opacity:.3,duration:.1,ease:'power2.in'},0)
+      .to(world.scale,{y:base*.88,duration:.11,ease:'power2.in'},0)
+      .to(faceMat,{emissiveIntensity:0,opacity:.1,duration:.55,ease:'power2.out'},.14)
+      .to(world.scale,{y:base,duration:.8,ease:'elastic.out(1,.4)'},.13);
+    gsap.fromTo(pulse.scale,{x:.5,y:.5,z:1},{x:2.1,y:2.1,z:1,duration:.9,ease:'power2.out'});
+    gsap.fromTo(pulse.material,{opacity:.9},{opacity:0,duration:.9,ease:'power2.out'});
+  }
+
+  let down=false,moved=0,lx=0,ly=0;
+  hero.addEventListener('pointerdown',e=>{ if(e.target.closest('a,button'))return; down=true; moved=0; lx=e.clientX; ly=e.clientY; });
+  addEventListener('pointermove',e=>{
+    if(down){ const dx=e.clientX-lx,dy=e.clientY-ly; lx=e.clientX; ly=e.clientY; moved+=Math.abs(dx)+Math.abs(dy);
+      state.vY+=dx*.00028; state.vX+=dy*.0002; }
+    state.tiltY=((e.clientX/innerWidth)-.5)*.35;
+    state.tiltX=((e.clientY/innerHeight)-.5)*.2;
+  });
+  addEventListener('pointerup',()=>{ if(down&&moved<8&&heroVisible) blink(); down=false; });
+  new IntersectionObserver(en=>heroVisible=en[0].isIntersecting,{threshold:.02}).observe(hero);
+
+  const clock=new THREE.Clock();
+  (function tick(){
+    requestAnimationFrame(tick);
+    if(!heroVisible||document.hidden) return;
+    const t=clock.getElapsedTime();
+    state.rotY+=state.vY+state.auto; state.vY*=.93;
+    state.rotX+=state.vX; state.vX*=.88;
+    state.rotX=Math.max(-.7,Math.min(.7,state.rotX));
+    state.rotX+=(0-state.rotX)*.01;
+    world.rotation.y=state.rotY+state.introRot+state.tiltY;
+    world.rotation.x=state.rotX+state.tiltX;
+    world.position.y=worldBaseY+Math.sin(t*.6)*.14;
+    frames.forEach(f=>{
+      f.m.position.y=f.baseY+Math.sin(t*.8+f.phase)*.1;
+      f.m.rotation.z=Math.sin(t*.5+f.phase)*.05;
+    });
+    ringG.rotation.x=Math.PI/2.15+Math.sin(t*.5)*.07;
+    ringB.rotation.x=Math.PI/1.85+Math.cos(t*.4)*.06;
+    pts.rotation.y+=.0007; pts.rotation.x=Math.sin(t*.2)*.05;
+    camera.position.z=camBase+state.scroll*2;
+    camera.lookAt(world.position);
+    if(!RM&&t>nextBlink){ blink(); nextBlink=t+8+Math.random()*9; }
+    renderer.render(scene,camera);
+  })();
+
+  if(window.ScrollTrigger){
+    ScrollTrigger.create({trigger:hero,start:'top top',end:'bottom top',scrub:true,
+      onUpdate:s=>{state.scroll=s.progress;}});
+  }
+
+  glIntro=()=>{
+    if(RM){ state.introRot=0; cageMat.opacity=.85; cage2Mat.opacity=.4; pMat.opacity=.8;
+      ringG.material.opacity=1; ringB.material.opacity=.55;
+      frames.forEach(f=>{f.m.material.opacity=.95; f.edge.material.opacity=.9;});
+      return; }
+    gsap.timeline()
+      .to(state,{introRot:0,duration:2,ease:'power3.out'},0)
+      .to(cageMat,{opacity:.85,duration:1.2},.3)
+      .to(cage2Mat,{opacity:.4,duration:1.2},.5)
+      .to(ringG.material,{opacity:1,duration:1},.6)
+      .to(ringB.material,{opacity:.55,duration:1},.7)
+      .to(pMat,{opacity:.8,duration:1.2},.8)
+      .to(frames.map(f=>f.m.material),{opacity:.95,duration:.8,stagger:.07},.5)
+      .to(frames.map(f=>f.edge.material),{opacity:.9,duration:.8,stagger:.07},.55);
+  };
+})();
+
+/* ---------- preloader → hero intro ---------- */
+function heroIntro(){
+  glIntro&&glIntro();
+  if(RM) return;
+  gsap.timeline({defaults:{ease:'power4.out'}})
+    .from('.site-header',{yPercent:-120,duration:.9},0)
+    .from('.hero-title .word',{yPercent:112,duration:1.1,stagger:.14},.05)
+    .from('.hero-kicker',{opacity:0,y:16,duration:.7},.3)
+    .from('.sub-brand',{opacity:0,y:20,duration:.7},.55)
+    .from('.hero-sub',{opacity:0,y:22,duration:.8},.5)
+    .from('.hero-cta > *',{opacity:0,y:18,duration:.6,stagger:.09},.65)
+    .from('.hud > *',{opacity:0,scale:.7,duration:.6,stagger:.05},.7)
+    .from('.hero-hint',{opacity:0,duration:.8},1)
+    .from('.hero-side',{opacity:0,duration:.8},.9);
+}
+(function boot(){
+  const pre=q('#preloader');
+  if(RM){ pre.remove(); document.documentElement.classList.remove('is-loading'); lenis&&lenis.start(); heroIntro(); return; }
+  const o={v:0};
+  gsap.to(o,{v:100,duration:1.7,ease:'power2.inOut',
+    onUpdate:()=>{ q('#preCount').textContent=String(Math.round(o.v)).padStart(3,'0'); q('#preBar').style.transform=`scaleX(${o.v/100})`; },
+    onComplete:()=>{
+      gsap.timeline()
+        .to('.pre-inner',{opacity:0,y:-24,duration:.4,ease:'power2.in'})
+        .to('.lid-t',{yPercent:-56,duration:.75,ease:'power4.inOut'},'-=.05')
+        .to('.lid-b',{yPercent:56,duration:.75,ease:'power4.inOut'},'<')
+        .to('.lid-t',{yPercent:-7,duration:.3,ease:'power3.inOut'},'+=.08')
+        .to('.lid-b',{yPercent:7,duration:.3,ease:'power3.inOut'},'<')
+        .to('.lid-t',{yPercent:-101,duration:1,ease:'power4.inOut'},'+=.1')
+        .to('.lid-b',{yPercent:101,duration:1,ease:'power4.inOut'},'<')
+        .add(()=>heroIntro(),'-=.9')
+        .add(()=>{ pre.style.display='none'; document.documentElement.classList.remove('is-loading');
+          lenis&&lenis.start(); window.ScrollTrigger&&ScrollTrigger.refresh(); },'-=.25');
+    }});
+})();
+
+/* ---------- marquees ---------- */
+function marquee(sel,dir,dur){
+  const track=q(sel); if(!track||!window.gsap) return;
+  const g=track.children[0];
+  for(let i=0;i<3;i++) track.appendChild(g.cloneNode(true));
+  const tw=gsap.fromTo(track,{xPercent:dir>0?0:-25},{xPercent:dir>0?-25:0,duration:dur,ease:'none',repeat:-1});
+  if(!RM&&window.ScrollTrigger){
+    let boost=0;
+    ScrollTrigger.create({start:0,end:'max',onUpdate:s=>{ boost=Math.min(Math.abs(s.getVelocity())/900,2.5); }});
+    gsap.ticker.add(()=>{ boost*=.94; tw.timeScale(1+boost); });
+  }
+}
+marquee('#mqA',1,26);
+marquee('#mqB',-1,32);
+
+/* ---------- custom cursor + magnetic ---------- */
+if(FINE&&!RM&&window.gsap){
+  document.documentElement.classList.add('has-cursor');
+  const dot=q('#cDot'),ring=q('#cRing'),label=q('#cLabel');
+  gsap.set([dot,ring],{xPercent:-50,yPercent:-50,x:-100,y:-100});
+  const dx=gsap.quickTo(dot,'x',{duration:.14,ease:'power3'}),dy=gsap.quickTo(dot,'y',{duration:.14,ease:'power3'});
+  const rx=gsap.quickTo(ring,'x',{duration:.42,ease:'power3'}),ry=gsap.quickTo(ring,'y',{duration:.42,ease:'power3'});
+  addEventListener('mousemove',e=>{ dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+  document.addEventListener('mouseover',e=>{
+    const link=e.target.closest('a,button,.service-row');
+    const dc=e.target.closest('[data-cursor]');
+    if(link){ ring.classList.add('is-link'); ring.classList.remove('is-label'); }
+    else if(dc){ ring.classList.add('is-label'); ring.classList.remove('is-link'); label.textContent=dc.dataset.cursor; }
+    else ring.classList.remove('is-link','is-label');
+  });
+  document.addEventListener('mouseleave',()=>{ dot.style.opacity=0; ring.style.opacity=0; });
+  document.addEventListener('mouseenter',()=>{ dot.style.opacity=1; ring.style.opacity=1; });
+
+  qa('.btn,.icon-btn').forEach(b=>{
+    b.addEventListener('mousemove',e=>{
+      const r=b.getBoundingClientRect();
+      gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4});
+    });
+    b.addEventListener('mouseleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.5)'}));
+  });
+}else{
+  q('#cDot').style.display=q('#cRing').style.display='none';
+}
+
+/* ---------- scroll animations ---------- */
+if(window.gsap&&window.ScrollTrigger&&!RM){
+  /* section heads */
+  qa('.sec-tag,.sec-title').forEach(el=>{
+    gsap.from(el,{y:44,opacity:0,duration:.9,ease:'power3.out',
+      scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+  /* about statement — word by word */
+  gsap.fromTo('#statement .w',{opacity:.13},{opacity:1,stagger:.05,ease:'none',
+    scrollTrigger:{trigger:'#statement',start:'top 82%',end:'top 30%',scrub:true}});
+  /* collage parallax */
+  qa('.collage figure').forEach((f,i)=>{
+    gsap.to(f,{yPercent:i%2?-9:9,ease:'none',
+      scrollTrigger:{trigger:'.collage',start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  /* services rows */
+  gsap.from('.service-row',{y:56,opacity:0,duration:.8,stagger:.07,ease:'power3.out',
+    scrollTrigger:{trigger:'.svc-list',start:'top 85%'}});
+  /* work cards rise */
+  gsap.from('.work-track > *',{y:70,opacity:0,duration:.9,stagger:.06,ease:'power3.out',
+    scrollTrigger:{trigger:'#work',start:'top 75%'}});
+  /* hero content parallax out */
+  gsap.to('.hero-content',{yPercent:-10,opacity:.15,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hud',{opacity:0,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'40% top',scrub:true}});
+  /* process — push previous panel back */
+  const panels=qa('.panel');
+  panels.forEach((p,i)=>{
+    if(i===0) return;
+    gsap.to(panels[i-1],{scale:.92,filter:'brightness(.55)',transformOrigin:'center top',ease:'none',
+      scrollTrigger:{trigger:p,start:'top bottom',end:'top top',scrub:true}});
+  });
+  /* contact title chars */
+  qa('#contactTitle .line').forEach(line=>{
+    const txt=line.textContent; line.textContent='';
+    [...txt].forEach(ch=>{ const s=document.createElement('span'); s.className='ch'; s.textContent=ch===' '?'\u00A0':ch; line.appendChild(s); });
+  });
+  gsap.from('#contactTitle .ch',{yPercent:120,duration:.8,stagger:.02,ease:'power4.out',
+    scrollTrigger:{trigger:'#contact',start:'top 70%'}});
+  gsap.from(['.contact-sub','.contact-actions','.contact-grid'],{y:36,opacity:0,duration:.9,stagger:.12,ease:'power3.out',
+    scrollTrigger:{trigger:'#contact',start:'top 60%'}});
+  gsap.from('footer .foot-grid > *',{y:30,opacity:0,duration:.8,stagger:.1,ease:'power3.out',
+    scrollTrigger:{trigger:'footer',start:'top 92%'}});
+}
+/* contact title fallback split (RM path still needs spans to not break layout) */
+if(RM){ qa('#contactTitle .line').forEach(line=>{
+  const txt=line.textContent; line.textContent='';
+  [...txt].forEach(ch=>{ const s=document.createElement('span'); s.className='ch'; s.textContent=ch===' '?'\u00A0':ch; line.appendChild(s); });
+}); }
+
+/* ---------- stats count-up ---------- */
+qa('.stat b').forEach(b=>{
+  const target=+b.dataset.target, suf=b.dataset.suffix||'', pre=b.dataset.prefix||'';
+  const render=v=>{ b.textContent=pre+Math.round(v).toLocaleString('en-US')+suf; };
+  render(0);
+  if(window.gsap&&window.ScrollTrigger){
+    ScrollTrigger.create({trigger:b,start:'top 90%',once:true,onEnter:()=>{
+      const o={v:0};
+      gsap.to(o,{v:target,duration:RM?0:1.9,ease:'power3.out',onUpdate:()=>render(o.v)});
+    }});
+  }else render(target);
+});
+
+/* ---------- work: horizontal pin ---------- */
+if(window.gsap&&window.ScrollTrigger){
+  const mm=gsap.matchMedia();
+  mm.add('(min-width:861px)',()=>{
+    if(RM) return;
+    const track=q('#workTrack');
+    const dist=()=>Math.max(0,track.scrollWidth-innerWidth);
+    const tween=gsap.to(track,{x:()=>-dist(),ease:'none',
+      scrollTrigger:{trigger:'#work',start:'top top',end:()=>'+='+(dist()+innerHeight*.25),
+        pin:true,scrub:1,anticipatePin:1,invalidateOnRefresh:true,
+        onUpdate:s=>{
+          q('#wpBar').style.transform=`scaleX(${s.progress})`;
+          q('#wpCount').textContent=String(Math.min(8,Math.max(1,Math.ceil(s.progress*8)))).padStart(2,'0');
+        }}});
+    qa('.card-img img').forEach(img=>{
+      gsap.fromTo(img,{xPercent:-6},{xPercent:0,ease:'none',
+        scrollTrigger:{trigger:img.closest('.card'),containerAnimation:tween,start:'left right',end:'right left',scrub:true}});
+    });
+  });
+}
+
+/* ---------- services floating preview ---------- */
+if(FINE&&!RM&&window.gsap){
+  const prev=q('#svcPreview'),img=q('#svcImg');
+  gsap.set(prev,{x:-600,y:-600,scale:.85});
+  const xTo=gsap.quickTo(prev,'x',{duration:.5,ease:'power3'}),yTo=gsap.quickTo(prev,'y',{duration:.5,ease:'power3'});
+  qa('.service-row').forEach(r=>{ const pre=new Image(); pre.src=r.dataset.img; }); // preload
+  q('#svcList').addEventListener('mousemove',e=>{ xTo(e.clientX+28); yTo(e.clientY-190); });
+  qa('.service-row').forEach(r=>{
+    r.addEventListener('mouseenter',()=>{
+      img.src=r.dataset.img;
+      gsap.to(prev,{opacity:1,scale:1,rotation:gsap.utils.random(-5,5),duration:.4,ease:'power3.out'});
+    });
+  });
+  q('#services').addEventListener('mouseleave',()=>gsap.to(prev,{opacity:0,scale:.85,duration:.35}));
+}
+
+/* ---------- iris spin ---------- */
+if(window.gsap&&!RM){
+  gsap.to('#irisBlades',{rotation:360,svgOrigin:'100 100',repeat:-1,duration:40,ease:'none'});
+}
+
+/* ---------- header hide/show ---------- */
+{
+  const header=q('#siteHeader');
+  if(window.ScrollTrigger){
+    ScrollTrigger.create({start:0,end:'max',onUpdate:s=>{
+      header.classList.toggle('scrolled',s.scroll()>60);
+      if(s.scroll()>160&&s.direction===1) header.classList.add('hide');
+      else header.classList.remove('hide');
+    }});
+  }
+}
+
+/* ---------- mobile menu ---------- */
+{
+  const btn=q('#menuBtn'),menu=q('#mMenu');
+  const close=()=>{ menu.classList.remove('open'); lenis&&lenis.start(); };
+  btn.addEventListener('click',()=>{
+    if(menu.classList.contains('open')){ close(); return; }
+    menu.classList.add('open'); lenis&&lenis.stop();
+    if(window.gsap&&!RM) gsap.fromTo('.m-menu .m-link',{y:56,opacity:0},{y:0,opacity:1,stagger:.07,duration:.6,ease:'power3.out',delay:.1});
+  });
+  qa('.m-menu a').forEach(a=>a.addEventListener('click',close));
+}
+
+/* ---------- anchors ---------- */
+qa('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id.length<2) return;
+    const el=q(id); if(!el) return;
+    e.preventDefault();
+    if(lenis) lenis.scrollTo(el,{offset:-10,duration:1.4});
+    else el.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+/* ---------- share ---------- */
+q('#shareBtn').addEventListener('click',async()=>{
+  const data={title:'BlinkBox Studio',text:'BlinkBox Studio — video production in Amman. Come see their site:',url:'https://blinkboxstudio.net'};
+  if(navigator.share){ try{ await navigator.share(data); toast('Shared — thank you!'); return; }catch(e){} }
+  try{ await navigator.clipboard.writeText(data.url); toast('Link copied — pass it on'); }
+  catch(e){
+    const ta=document.createElement('textarea'); ta.value=data.url; document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); toast('Link copied — pass it on'); }catch(e2){ toast('Copy this: blinkboxstudio.net'); }
+    ta.remove();
+  }
+});
+
+/* ---------- playful: tab title blink ---------- */
+{
+  const t=document.title;
+  document.addEventListener('visibilitychange',()=>{
+    document.title=document.hidden?'Don\u2019t blink — BlinkBox Studio':t;
+  });
+}
+
+addEventListener('load',()=>window.ScrollTrigger&&ScrollTrigger.refresh());
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>window.ScrollTrigger&&ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>
